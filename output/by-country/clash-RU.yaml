@@ -12,13 +12,26 @@ proxies:
   password: 6b39ae3234dfd68b
   udp: true
 - name: 🇷🇺 俄罗斯 (Russia) 02 - xiaohe
+  type: vless
+  server: 185.148.106.50
+  port: 8880
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: vms.lifetime54.workers.dev
+- name: 🇷🇺 俄罗斯 (Russia) 03 - xiaohe
   type: ss
   server: 130.49.189.158
   port: 43558
   cipher: chacha20-ietf-poly1305
   password: /QFycb02d87cByC9+5ZRSygI1avHiPXkgYG2yc+TnGA=
   udp: true
-- name: 🇷🇺 俄罗斯 (Russia) 03 - xiaohe
+- name: 🇷🇺 俄罗斯 (Russia) 04 - xiaohe
   type: vless
   server: 78.159.247.246
   port: 443
@@ -32,6 +45,19 @@ proxies:
     path: /ws
     headers:
       Host: sb2.hat.onl
+- name: 🇷🇺 俄罗斯 (Russia) 05 - xiaohe
+  type: vless
+  server: 104.21.70.21
+  port: 8080
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: vms.lifetime11.workers.dev
 proxy-groups:
 - name: PROXIES
   type: select
@@ -40,6 +66,8 @@ proxy-groups:
   - 🇷🇺 俄罗斯 (Russia) 01 - xiaohe
   - 🇷🇺 俄罗斯 (Russia) 02 - xiaohe
   - 🇷🇺 俄罗斯 (Russia) 03 - xiaohe
+  - 🇷🇺 俄罗斯 (Russia) 04 - xiaohe
+  - 🇷🇺 俄罗斯 (Russia) 05 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -48,5 +76,7 @@ proxy-groups:
   - 🇷🇺 俄罗斯 (Russia) 01 - xiaohe
   - 🇷🇺 俄罗斯 (Russia) 02 - xiaohe
   - 🇷🇺 俄罗斯 (Russia) 03 - xiaohe
+  - 🇷🇺 俄罗斯 (Russia) 04 - xiaohe
+  - 🇷🇺 俄罗斯 (Russia) 05 - xiaohe
 rules:
 - MATCH,PROXIES
